@@ -3,6 +3,7 @@ services:
   searxng:
     container_name: searxng
     image: searxng/searxng:latest
+    hostname: frontend
     ports:
       - "8080:8080"
     volumes:
@@ -15,3 +16,5 @@ services:
     image: nginx:latest
     ports:
       - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx
