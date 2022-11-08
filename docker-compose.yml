@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  searxng:
+    container_name: searxng
+    image: searxng/searxng:latest
+    ports:
+      - "80:8080"
+    volumes:
+      - ./searxng:/etc/searxng
+    environment:
+      - BASE_URL=http://localhost:80
+      - INSTANCE_NAME=homenetwork.co.in
